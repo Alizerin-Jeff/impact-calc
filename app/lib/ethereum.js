@@ -49,7 +49,7 @@ export async function getLPStatus(poolAddress) {
   }
 }
 
-const getEthPrice = async () => {
+export const getEthPrice = async () => {
     const requestOptions = {
       method: 'GET',
       headers: { 'X-CMC_PRO_API_KEY': 'c618dfd9-ccab-4817-8d80-090c1e48f377' },
