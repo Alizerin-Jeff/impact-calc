@@ -69,7 +69,7 @@ const TradeSimulation = () => {
   return (
     <div className='flex flex-col border rounded-lg w-2/3'>
     <div className=''>
-        <form onSubmit={handleSubmit} className='flex rounded-lg justify-around p-4 bg-base-100'>
+        <form onSubmit={handleSubmit} className='flex max-md:flex-col rounded-lg justify-around p-4 bg-base-100'>
         <label className='p-2'>
             Choose LP:
             <select className='mx-1 border rounded-md bg-base-200' value={selectedLP} onChange={handleLPChange}>

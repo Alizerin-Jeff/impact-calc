@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
     <main className="flex min-h-screen flex-col items-center pt-8">
-      <div className="flex gap-20 font-mono">
+      <div className="flex max-md:flex-col gap-20 font-mono">
         <CurrentLPStatus lpAddress={barcLpAddress} />
         <CurrentLPStatus lpAddress={eagLpAddress} />
       </div>
