@@ -5,7 +5,7 @@ const LPCard = ({ data, color, name, link, picLink, totalSupply, price, reserveT
     const formatter = new Intl.NumberFormat('en-US');
     const marketCap = Number(Number(totalSupply * price).toFixed(0)).toLocaleString();
   return (
-    <div className="card py-2 w-96 bg-base-100 shadow-xl">
+    <div className="card py-2 w-92 max-md:max-w-80 bg-base-100 shadow-xl">
      <figure><img src={picLink} className='h-32' /></figure>
       <div className="items-center card-body py-1">
        <div className=" rounded-md w-3/8 px-1">
