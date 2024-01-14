@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const TradeResult = ({ data }) => {
     
     return (
-      <div className="flex min-h-25 justify-around">
+      <div className="flex max-md:flex-col max-md:gap-4 min-h-25 justify-around">
         <div>
             <p>New Market Cap: {`${Number(Number(data.newMarketCap).toFixed(0)).toLocaleString()} (${Number(data.changeMarketCap).toFixed(2)}%)`}</p>
             <p>New Price: {`$${Number(data.newPrice).toFixed(5)}`}</p>
