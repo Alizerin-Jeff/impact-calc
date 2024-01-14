@@ -11,7 +11,7 @@ const TradeResult = ({ data }) => {
         </div>
 
         <div>
-            <p>Fill Price: {`$${Number(data.fillPrice).toFixed(5)}`}</p>
+            <p>Fill Price: {`$${Number(data.fillPrice).toFixed(5)} (${data.fillPriceImpact.toFixed(2)}%)`}</p>
             <p>{`${data.selectedLP}`} Reserves: {Number(data.newTokenReserve).toFixed(2)}</p>
             <p>ETH Reserves  : {Number(data.newEthReserve).toFixed(2)}</p>
         </div>

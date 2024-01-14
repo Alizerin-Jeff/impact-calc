@@ -10,6 +10,7 @@ export const simulateTrade = async (tradeAction, amount, selectedLP) => {
     if(selectedLP === 'EAG') {
         lpAddress = '0x7f00995f977a8a64abd4b888e5cf09d86f91ca66'
         totalSupply = 12075000
+        amount = amount * 0.97
     }
     else {
         lpAddress = '0x216387eEDa0586730697e769F1fabcca77b123e1'
@@ -20,6 +21,7 @@ export const simulateTrade = async (tradeAction, amount, selectedLP) => {
     let calculatedNewEthReserve,
         calculatedNewPrice,
         calculatedFillPrice,
+        calculatedFillPriceImpact,
         calculatedPriceImpact,
         calculatedNewMarketCap,
         calculatedChangeMarketCap,
@@ -52,6 +54,7 @@ export const simulateTrade = async (tradeAction, amount, selectedLP) => {
     calculatedNewPrice = ethPrice * calculatedNewEthReserve / calculatedNewTokenReserve
     // price impact in percent
     calculatedPriceImpact = (calculatedNewPrice - currentPrice) / currentPrice * 100
+    calculatedFillPriceImpact = (calculatedFillPrice - currentPrice) / currentPrice * 100
     //New market cap and change in market cap
     calculatedNewMarketCap = calculatedNewPrice * totalSupply
     calculatedChangeMarketCap = (calculatedNewMarketCap - currentMarketCap) / currentMarketCap * 100
@@ -61,6 +64,7 @@ export const simulateTrade = async (tradeAction, amount, selectedLP) => {
       newPrice: calculatedNewPrice,
       fillPrice: calculatedFillPrice,
       priceImpact: calculatedPriceImpact,
+      fillPriceImpact: calculatedFillPriceImpact,
       newMarketCap: calculatedNewMarketCap,
       changeMarketCap: calculatedChangeMarketCap,
       newTokenReserve: calculatedNewTokenReserve,
