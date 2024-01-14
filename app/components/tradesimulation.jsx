@@ -69,7 +69,7 @@ const TradeSimulation = () => {
   };
 
   return (
-    <div className='flex flex-col border rounded-lg w-2/3'>
+    <div className='flex flex-col border rounded-lg md:w-2/3 max-md:max-w-80'>
     <div className=''>
         <form onSubmit={handleSubmit} className='flex max-md:flex-col rounded-lg justify-around p-4 bg-base-100'>
         <label className='p-2'>
@@ -90,7 +90,7 @@ const TradeSimulation = () => {
 
         <label className='p-2'>
             Amount: 
-            <input className='mx-1 px-1 border rounded-md bg-base-200' type="number" value={amount} onChange={handleAmountChange} />
+            <input className='mx-1 px-2 border rounded-md bg-base-200' type="number" value={amount} onChange={handleAmountChange} />
         </label>
 
         <button className="border p-2 rounded-md bg-base-300 hover:bg-sky-300" type="submit">Simulate Trade</button>
