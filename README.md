@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Impact Calc
+
+A Uniswap V2 price impact calculator built for the EAG and BARC communities. Simulate buy and sell trades to see how they affect pool price, and get your expected fill price before executing on-chain.
+
+## Features
+
+- **Live LP Status** -- Displays real-time reserves, token prices, and market caps for EAG/WETH and BARC/WETH liquidity pools
+- **Trade Simulation** -- Enter a trade size and direction (buy/sell) to calculate the resulting price impact
+- **Fill Price Estimation** -- See your actual expected fill price, accounting for Uniswap's 0.3% swap fee and token-specific sell taxes
+- **ETH Price Feed** -- Pulls live ETH/USD pricing from CoinMarketCap for USD-denominated values
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) 14 (App Router)
+- [ethers.js](https://docs.ethers.org/) v6 for on-chain reads
+- [Tailwind CSS](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/) for styling
+- [Axios](https://axios-http.com/) for API requests
+
+## Prerequisites
+
+- Node.js 18+
+- A [CoinMarketCap](https://coinmarketcap.com/api/) API key (free tier works)
+- An Ethereum mainnet RPC URL (e.g. [Alchemy](https://www.alchemy.com/), [Infura](https://www.infura.io/))
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   git clone https://github.com/your-username/impact-calc.git
+   cd impact-calc
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Create a `.env` file in the project root (see `.env.example`):
 
-## Learn More
+   ```
+   CMC_KEY=your_coinmarketcap_api_key
+   ALCHEMY_URL=https://eth-mainnet.g.alchemy.com/v2/your_api_key
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Start the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+MIT
