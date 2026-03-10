@@ -3,11 +3,14 @@
 import { ethers } from 'ethers';
 import axios from 'axios';
 import UNI_V2_PAIR_ABI from './univ2abi.json'
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const WETH_ADDRESS = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'
 const eagLP = '0x7f00995f977a8a64abd4b888e5cf09d86f91ca66'
 
-const provider = new ethers.JsonRpcProvider(`https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`);
+const provider = new ethers.JsonRpcProvider(process.env.ALCHEMY_URL);
 
 const uniswapV2PairABI = UNI_V2_PAIR_ABI; // Uniswap V2 Pair ABI
 
@@ -52,7 +55,7 @@ export async function getLPStatus(poolAddress) {
 export const getEthPrice = async () => {
     const requestOptions = {
       method: 'GET',
-      headers: { 'X-CMC_PRO_API_KEY': 'c618dfd9-ccab-4817-8d80-090c1e48f377' },
+      headers: { 'X-CMC_PRO_API_KEY': process.env.CMC_KEY },
       redirect: 'follow'
     };
   

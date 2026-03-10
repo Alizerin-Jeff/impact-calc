@@ -20,7 +20,7 @@ export default function Home() {
         <TradeSimulation />
       </div>
       <footer className='mt-4'>
-    <p className="text-center text-sm">© 2023 Hack The Planet. All rights reserved.</p>
+    <p className="text-center text-sm">© 2023 Alizerin Labs. All rights reserved.</p>
     </footer>
     </main>
     
