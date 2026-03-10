@@ -2,6 +2,8 @@
 
 A Uniswap V2 price impact calculator built for the EAG and BARC communities. Simulate buy and sell trades to see how they affect pool price, and get your expected fill price before executing on-chain.
 
+[See Live App](https://impact-calc.vercel.app/)
+
 ## Features
 
 - **Live LP Status** -- Displays real-time reserves, token prices, and market caps for EAG/WETH and BARC/WETH liquidity pools
